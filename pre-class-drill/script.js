@@ -145,10 +145,18 @@ document.onkeyup = function logKey() {
         alert("Please enter 'a-z' or press the space bar");
 
         //Add a space to the end of the playerKeyChoice for formatting.
-        playerKeyChoice += spaceHolder;
+        //playerKeyChoice += spaceHolder;
 
         //print illegal inputs in the illegal area.
         document.getElementById("illegalKeys").innerHTML += playerKeyChoice;
+
+        //add a space in the output space
+        document.getElementById("illegalKeys").innerHTML += " ";
+
+        //remove the illegal input from the keyCounter Array
+        reset = keyCounter.length - 1;
+        keyCounter[reset] = "";
+
     }
     //If not illegal, run normal procedures.
     else {
