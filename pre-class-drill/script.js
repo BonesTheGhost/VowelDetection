@@ -21,7 +21,7 @@ var consCount = 0;
 var wordCycleCounter = 0;
 
 // to prevent the entire keyCounter array from being added every time.
-var arrayControl = 1;
+var arrayControl = 0;
 
 //arrays for holding keys entered and words saved.
 var keyCounter = [""];
@@ -48,9 +48,6 @@ document.onkeyup = function logKey() {
     //add the players key to the key array.
     keyCounter.push(playerKeyChoice);
 
-    //keep counting up for every key pressed.
-    arrayControl += 1;
-
     //outputting the array to make sure the right keys get entered into the array.
     console.log(keyCounter);
 
@@ -73,13 +70,17 @@ document.onkeyup = function logKey() {
     */
     if (playerKeyChoice === " ") {
 
+        //make the word assembler variable for concantinating the chars into words.
         var wordAssembler = "";
         wordCycleCounter += 1;
 
+        //for i < every character entered so far (offset by +1 to avoid printing the null)
         for (i=arrayControl; i<keyCounter.length; i++){
             wordAssembler += keyCounter[i];
             console.log("wordAssembler");
 
+            arrayControl = keyCounter.length;
+            console.log("New lower bound: ", arrayControl);
         }
 
         wordHolder.push(wordAssembler);
