@@ -211,7 +211,7 @@ document.onkeyup = function logKey() {
                 if (wordAssembler === cheatKey) {
                     generateCheat();
 
-                    document.getElementById("cheatCode").innerHTML += wordHolder[wordCycleCounter];
+                    document.getElementById("cheatCode").innerHTML += " ";
                     //reset vowelTrue to 'false' or 0
                     vowelTrue = 0;
                     console.log("CHEATCODE LOGGED :: vowelTrue set to 0 to allow for retry: ", vowelTrue);
